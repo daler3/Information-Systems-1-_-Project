@@ -1,0 +1,40 @@
+<Schema name="Schema_Progetto">
+  <Cube name="EsecuzioneCube" visible="true" cache="true" enabled="true">
+    <Table name="fact_esecuzione">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="lavorazione_id" highCardinality="false" name="Lavorazione">
+      <Hierarchy name="Lavorazione Hierarchy" visible="true" hasAll="true" primaryKey="id_lavorazione">
+        <Table name="dim_lavorazione">
+        </Table>
+        <Level name="Nome" visible="true" table="dim_lavorazione" column="nome" nameColumn="nome" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="TempoNominale" visible="true" table="dim_lavorazione" column="tempo_nominale" nameColumn="tempo_nominale" type="Integer" internalType="int" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="prodotto_id" highCardinality="false" name="Prodotto">
+      <Hierarchy name="Prodotto Hierarchy 0" visible="true" hasAll="true" primaryKey="id_prodotto">
+        <Table name="dim_prodotto">
+        </Table>
+        <Level name="Costo" visible="true" table="dim_prodotto" column="costo" nameColumn="costo" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Nome" visible="true" table="dim_prodotto" column="nome" nameColumn="nome" type="String" uniqueMembers="false" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dipendente_id" highCardinality="false" name="Dipendente">
+      <Hierarchy name="Dipendente Hierarchy 0" visible="true" hasAll="true">
+        <Table name="dim_dipendente">
+        </Table>
+        <Level name="Ruolo" visible="true" table="dim_dipendente" column="ruolo" nameColumn="ruolo" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Eta" visible="true" table="dim_dipendente" column="eta" nameColumn="eta" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="MediaTempo" column="tempo" datatype="Numeric" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="NumeroEsecuzioni" column="id_esecuzione" datatype="Numeric" aggregator="count" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

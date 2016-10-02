@@ -1,0 +1,15 @@
+DETTAGLI CONNESSIONI UTILIZZATE PER RIEMPIMENTO DB: 
+
+input: 
+	Host Name: localhost
+	Database Name: ProgSI1415			(il database fornito)
+	Port Number: 3306
+	User Name: root
+	Password: root
+
+output: 
+	Host Name: localhost
+	Database Name: progetto3
+	Port Number: 3306
+	User Name: root
+	Password: root
