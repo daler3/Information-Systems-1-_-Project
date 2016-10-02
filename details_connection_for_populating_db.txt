@@ -1,8 +1,8 @@
-DETTAGLI CONNESSIONI UTILIZZATE PER RIEMPIMENTO DB: 
+Deatils of used connections for pupulating the DB: 
 
 input: 
 	Host Name: localhost
-	Database Name: ProgSI1415			(il database fornito)
+	Database Name: ProgSI1415			(the given database)
 	Port Number: 3306
 	User Name: root
 	Password: root
